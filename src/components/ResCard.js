@@ -1,17 +1,19 @@
 import { CDN_URL } from "../utils/constants";
 
 const ResCard = ({ resData }) => {
-  const { resName, resRating, resETA, cuisines, resLocation, imgId } = resData;
+  const { name, avgRating, sla, cuisines, locality, cloudinaryImageId } = resData;
+
+  
   return (
     <div className="res-card">
-      <img className="res-logo" src={CDN_URL + imgId} />
-      <h3>{resName}</h3>
+      <img className="res-logo" src={CDN_URL + cloudinaryImageId} />
+      <h3>{name}</h3>
       <div style={{ display: "flex", gap: "5px" }}>
-        <h5>{resRating} stars</h5>
-        <h5> | {resETA} mins</h5>
+        <h5>{avgRating} stars</h5>
+        <h5> | {sla.deliveryTime} mins</h5>
       </div>
-      <h5>{cuisines}</h5>
-      <h5>{resLocation}</h5>
+      <h5>{cuisines[0]}</h5>
+      <h5>{locality}</h5>
     </div>
   );
 };
