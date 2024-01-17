@@ -10,7 +10,7 @@ const ResCard = ({ resData }) => {
       <h3>{name}</h3>
       <div style={{ display: "flex", gap: "5px" }}>
         <h5>{avgRating} stars</h5>
-        <h5> | {sla.deliveryTime} mins</h5>
+        <h5> | {sla?.slaString}</h5>
       </div>
       <h5>{cuisines[0]}</h5>
       <h5>{locality}</h5>

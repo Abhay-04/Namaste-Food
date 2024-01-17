@@ -37,7 +37,6 @@
 }
 
 .res-container {
-  
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -62,25 +61,33 @@
 }
 
 .filter-btn {
-  margin: 10px;
+  
   cursor: pointer;
 }
 
-.shimmer-container{
+.shimmer-container {
   display: flex;
   flex-wrap: wrap;
   margin-top: 30px;
   gap: 16px;
 }
 
-.shimmer-card{
+.shimmer-card {
   width: 250px;
   height: 380px;
   border-radius: 10%;
   background-color: #f0f0f0;
 }
 
-.btn-header{
-  padding:  0px 15px;
+.btn-header {
+  padding: 0px 15px;
   cursor: pointer;
+}
+
+.filter {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  gap: 20px;
+  
 }
