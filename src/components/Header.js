@@ -1,28 +1,41 @@
 import { useState } from "react";
 import logo from "../../logo.png";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("login");
+  const onlineStatus = useOnlineStatus();
 
   return (
-    <div className="header">
+    <div className="flex justify-between px-6 py-4 bg-red-200 shadow-md">
       <div className="logo-container">
-        <img className="logo" src={logo} />
+        <img className="w-46" src={logo} />
       </div>
-      <div className="nav-items">
-        <ul>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link>
-          <Link>Cart</Link>
-         
-          
+      <div className="flex items-center">
+        <ul className="flex items-center gap-6">
+          <li>Status : {onlineStatus ? "✅" : "🔴"}</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="/grocery">Grocery</Link>
+          </li>
+          <li>
+            <Link>Cart</Link>
+          </li>
+
           <button
             onClick={() => {
               btnName === "login" ? setBtnName("logout") : setBtnName("login");
             }}
-            className="btn-header"
+            className="px-4 py-1 bg-green-400 rounded-md"
           >
             {btnName}
           </button>

@@ -1,4 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap");
 
 * {
   margin: 0;
@@ -38,19 +43,15 @@
 
 .res-container {
   display: flex;
-  
+
   gap: 16px;
   flex-wrap: wrap;
-  
 }
 
 .res-card {
   width: 250px;
   padding: 10px 10px;
-  margin: 20px 0px ;
- 
-  
- 
+  margin: 20px 0px;
 }
 
 .res-card:hover {
@@ -62,9 +63,8 @@
 
 .resCard-cuisines {
   width: 100%;
-  margin: 10px  0px;
+  margin: 10px 0px;
   overflow-wrap: break-word;
-  
 }
 
 .res-logo {
@@ -101,4 +101,4 @@
   height: 60px;
   align-items: center;
   gap: 20px;
-}
+} */
