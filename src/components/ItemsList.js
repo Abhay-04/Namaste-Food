@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { CDN_URL } from "../utils/constants";
 
 const ItemsList = ({ items }) => {
-  console.log(items);
+
+ 
+  
+
   return (
     <div>
       {items.map((item) => (
@@ -22,7 +26,16 @@ const ItemsList = ({ items }) => {
           </div>
 
           <div className="w-2/12">
-            <img src={CDN_URL + item.card.info.imageId} alt="Image"  className="w-22 rounded-lg object-cover" />
+            <img
+              src={CDN_URL + item.card.info.imageId}
+              alt="Image"
+              className="w-22 rounded-lg object-cover"
+            />
+            <div className="flex justify-center">
+              <button  className=" px-2 rounded-lg bg-black text-white">
+                Add +{" "}
+              </button>
+            </div>
           </div>
         </div>
       ))}
