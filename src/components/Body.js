@@ -11,6 +11,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
 
   console.log("Body rendered");
+ 
 
   useEffect(() => {
     fetchData();
@@ -55,7 +56,7 @@ const Body = () => {
           ></input>
           <button
             className="px-4 py-1 mx-3 bg-green-200 rounded-md"
-            onClick ={() => {
+            onClick={() => {
               // filtered the restaurant list and update the UI
 
               const filteredList = listofRes.filter((res) =>

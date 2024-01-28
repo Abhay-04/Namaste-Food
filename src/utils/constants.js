@@ -6,3 +6,9 @@ export const RESTAURANT_API =
 
 export const RESTAURANT_MENU_API =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6195574&lng=77.0549901&restaurantId=";
+
+export const CATEGORIES_URL =
+  "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
+
+export const CATEGORIES_URL_2 =
+  "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory";
