@@ -1,10 +1,14 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantInfo from "../utils/useRestaurantInfo";
-import { CATEGORIES_URL} from "../utils/constants";
+import { CATEGORIES_URL, CATEGORIES_URL_2 } from "../utils/constants";
 import RestaurantCategories from "./RestaurantCategories.js";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
+  
+   const [showIndex , setShowIndex] = useState(null)
+
   const { resId } = useParams();
 
   const resInfo = useRestaurantInfo(resId);
@@ -17,14 +21,14 @@ const RestaurantMenu = () => {
   const { itemCards } =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
 
- 
-
   const categories =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
       (c) => c?.card?.card?.["@type"] === CATEGORIES_URL
     );
 
-  console.log(categories);
+
+
+
   return (
     <div className="w-6/12 text-center m-auto">
       <h1 className="font-bold text-2xl my-4">{name}</h1>
@@ -33,8 +37,13 @@ const RestaurantMenu = () => {
       </p>
 
       <div>
-        {categories.map((category) => (
-          <RestaurantCategories key={category?.card?.card.title}  data={category?.card?.card} />
+        {categories.map((category, index) => (
+          <RestaurantCategories
+            key={category?.card?.card.title}
+            data={category?.card?.card}
+            showItems={index === showIndex && true}
+            setShowIndex = {()=>setShowIndex(index)}
+          />
         ))}
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CDN_URL } from "../utils/constants";
+import { NO_IMAGE_URL } from "../utils/constants";
 
 const ItemsList = ({ items }) => {
 
@@ -27,7 +28,7 @@ const ItemsList = ({ items }) => {
 
           <div className="w-2/12">
             <img
-              src={CDN_URL + item.card.info.imageId}
+              src={ item.card.info.imageId ? CDN_URL + item.card.info.imageId : NO_IMAGE_URL }
               alt="Image"
               className="w-22 rounded-lg object-cover"
             />
