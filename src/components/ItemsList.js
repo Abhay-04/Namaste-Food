@@ -3,8 +3,23 @@ import { CDN_URL } from "../utils/constants";
 import { NO_IMAGE_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const ItemsList = ({ items }) => {
+  const notify = () =>
+    toast.success("Item added to cart", {
+      position: "bottom-right",
+      autoClose: 1000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+
   const dispatch = useDispatch();
 
   const handleAddItems = (item) => {
@@ -40,13 +55,14 @@ const ItemsList = ({ items }) => {
               alt="Image"
               className="w-22 rounded-lg object-cover"
             />
-            <div className="flex justify-center">
+            <div className="flex justify-center" onClick={notify}>
               <button
                 onClick={() => handleAddItems(item)}
                 className=" px-2 rounded-lg bg-black text-white"
               >
                 Add +{" "}
               </button>
+              <ToastContainer />
             </div>
           </div>
         </div>
