@@ -10,8 +10,5 @@ export const RESTAURANT_MENU_API =
 export const CATEGORIES_URL =
   "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
 
-export const CATEGORIES_URL_2 =
-  "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory";
-
 export const NO_IMAGE_URL =
   "https://cdn.vectorstock.com/i/preview-1x/82/99/no-image-available-like-missing-picture-vector-43938299.jpg";

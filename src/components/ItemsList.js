@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { CDN_URL } from "../utils/constants";
 import { NO_IMAGE_URL } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const ItemsList = ({ items }) => {
+  const dispatch = useDispatch();
 
- 
-  
+  const handleAddItems = (item) => {
+    dispatch(addItem(item));
+  };
 
   return (
     <div>
@@ -28,12 +32,19 @@ const ItemsList = ({ items }) => {
 
           <div className="w-2/12">
             <img
-              src={ item.card.info.imageId ? CDN_URL + item.card.info.imageId : NO_IMAGE_URL }
+              src={
+                item.card.info.imageId
+                  ? CDN_URL + item.card.info.imageId
+                  : NO_IMAGE_URL
+              }
               alt="Image"
               className="w-22 rounded-lg object-cover"
             />
             <div className="flex justify-center">
-              <button  className=" px-2 rounded-lg bg-black text-white">
+              <button
+                onClick={() => handleAddItems(item)}
+                className=" px-2 rounded-lg bg-black text-white"
+              >
                 Add +{" "}
               </button>
             </div>

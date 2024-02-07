@@ -6,8 +6,7 @@ import RestaurantCategories from "./RestaurantCategories.js";
 import { useState } from "react";
 
 const RestaurantMenu = () => {
-  
-   const [showIndex , setShowIndex] = useState(null)
+  const [showIndex, setShowIndex] = useState(null);
 
   const { resId } = useParams();
 
@@ -26,9 +25,6 @@ const RestaurantMenu = () => {
       (c) => c?.card?.card?.["@type"] === CATEGORIES_URL
     );
 
-
-
-
   return (
     <div className="w-6/12 text-center m-auto">
       <h1 className="font-bold text-2xl my-4">{name}</h1>
@@ -42,7 +38,7 @@ const RestaurantMenu = () => {
             key={category?.card?.card.title}
             data={category?.card?.card}
             showItems={index === showIndex && true}
-            setShowIndex = {()=>setShowIndex(index)}
+            setShowIndex={() => setShowIndex(index)}
           />
         ))}
       </div>
